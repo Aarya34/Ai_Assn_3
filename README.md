@@ -6,7 +6,7 @@ A simple Python project implementing a Chess AI using *Minimax* and *Alpha-Beta 
 
 ## 📁 Project Structure
 
-
+```bash
 chess-ai/
 ├── src/
 │   ├── __init__.py
@@ -21,40 +21,40 @@ chess-ai/
 ├── videos/                  # Stores generated gameplay videos
 ├── requirements.txt         # Dependencies
 └── README.md                # Project documentation
-
+```
 
 ---
 
 ## 💠 Setup Instructions
 
 ### 1. Clone the repository
-bash
+```bash
 git clone https://github.com/Aarya34/Ai_Assn_3.git
 cd Ai_Assn_3
-
+```
 
 ### 2. Create a virtual environment and install dependencies
-bash
+```bash
 python -m venv venv
 source venv/bin/activate       # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
+```
 
 ---
 
 ## ✅ Dependencies
 
 Contents of requirements.txt:
-
+```
 pygame
 python-chess
 opencv-python
-
+```
 
 Install manually if needed:
-bash
+```bash
 pip install pygame python-chess opencv-python
-
+```
 
 ---
 
@@ -68,17 +68,18 @@ pip install pygame python-chess opencv-python
 ## 🎮 How to Run
 
 ### 🧪 Option 1: Simplified Interactive Run
-bash
+```bash
 python scripts/simple_run.py
-
+```
 - Choose between Minimax or Alpha-Beta
 - Set search depth (2–3 recommended)
 - Choose whether to record a video
 
 ### 🎥 Option 2: Auto-Generate Video
-bash
-python scripts/generate_video.py --algorithm alphabeta --depth 3
 
+```bash
+python scripts/generate_video.py --algorithm alphabeta --depth 3
+```
 
 *Options:*
 - --algorithm: minimax or alphabeta (default: alphabeta)
