@@ -1,63 +1,125 @@
-# Slime Volleyball AI Implementation
+# ♟ Chess AI: Minimax & Alpha-Beta Pruning
 
-This project implements Minimax and Alpha-Beta pruning algorithms for the Slime Volleyball game environment. The implementation includes:
+A simple Python project implementing a Chess AI using *Minimax* and *Alpha-Beta Pruning* algorithms with a visual interface and gameplay video generation. Designed for AI Game Playing assignments.
 
-1. A custom Slime Volleyball game environment
-2. Minimax algorithm implementation
-3. Alpha-Beta pruning optimization
-4. Evaluation function for game states
-5. Video recording of gameplay
+---
 
-## Requirements
+## 📁 Project Structure
 
-- Python 3.8+
-- Required packages (install using `pip install -r requirements.txt`):
-  - numpy
-  - pygame
-  - opencv-python
-  - moviepy
 
-## Project Structure
+chess-ai/
+├── src/
+│   ├── __init__.py
+│   ├── chess_env.py         # Handles chess game logic using python-chess
+│   ├── minimax.py           # Minimax agent
+│   ├── alphabeta.py         # Alpha-Beta pruning agent
+│   ├── evaluation.py        # Evaluation function for board state
+│   └── visualizer.py        # Pygame-based visual board & video recorder
+├── scripts/
+│   ├── generate_video.py    # Main video generation script
+│   └── simple_run.py        # Simplified interactive runner
+├── videos/                  # Stores generated gameplay videos
+├── requirements.txt         # Dependencies
+└── README.md                # Project documentation
 
-- `slime_volleyball.py`: Game environment implementation
-- `algorithms.py`: Minimax and Alpha-Beta pruning implementations
-- `main.py`: Main game loop and AI vs AI gameplay
-- `requirements.txt`: Project dependencies
 
-## How to Run
+---
 
-1. Install dependencies:
-```bash
+## 💠 Setup Instructions
+
+### 1. Clone the repository
+bash
+git clone https://github.com/Aarya34/Ai_Assn_3.git
+cd Ai_Assn_3
+
+
+### 2. Create a virtual environment and install dependencies
+bash
+python -m venv venv
+source venv/bin/activate       # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
 
-2. Run the game:
-```bash
-python main.py
-```
 
-## Features
+---
 
-- Real-time visualization of the game
-- Automatic video recording of gameplay
-- Configurable AI parameters (search depth, evaluation weights)
-- Score tracking and game reset
+## ✅ Dependencies
 
-## Evaluation Function
+Contents of requirements.txt:
 
-The evaluation function considers:
-1. Distance to the ball (40% weight)
-2. Ball velocity and direction (30% weight)
-3. Ball height (30% weight)
+pygame
+python-chess
+opencv-python
 
-## Results
 
-The implementation demonstrates:
-1. Alpha-Beta pruning's efficiency over Minimax
-2. Strategic gameplay between AI agents
-3. Real-time decision making
-4. Smooth gameplay visualization
+Install manually if needed:
+bash
+pip install pygame python-chess opencv-python
 
-## Video Recording
 
-The game automatically records gameplay to `slime_volleyball_gameplay.mp4`. This video can be used for presentation and analysis of the AI's performance.
+---
+
+## 🧠 Algorithms
+
+- *Minimax*: Standard game tree search evaluating all possible future positions.
+- *Alpha-Beta Pruning*: Optimized Minimax that skips unnecessary branches, increasing efficiency.
+
+---
+
+## 🎮 How to Run
+
+### 🧪 Option 1: Simplified Interactive Run
+bash
+python scripts/simple_run.py
+
+- Choose between Minimax or Alpha-Beta
+- Set search depth (2–3 recommended)
+- Choose whether to record a video
+
+### 🎥 Option 2: Auto-Generate Video
+bash
+python scripts/generate_video.py --algorithm alphabeta --depth 3
+
+
+*Options:*
+- --algorithm: minimax or alphabeta (default: alphabeta)
+- --depth: Search depth (default: 3)
+- --max-moves: Max moves per game (default: 50)
+- --no-display: Headless mode
+
+---
+
+## 🧮 Evaluation Function
+
+The evaluation considers:
+- Material balance (piece values)
+- Positional weights (center control, piece development)
+- King safety and pawn structure
+- Mobility and board state
+
+---
+
+## 🖼 Visuals
+
+- The board is rendered using *pygame*
+- Moves are displayed step-by-step
+- Videos are saved in videos/ as .mp4
+
+
+---
+
+
+
+
+## 📌 Notes
+
+- If pygame throws errors on headless systems (like some Linux servers), use --no-display flag.
+- Evaluation depth beyond 3 may get slow without additional optimizations.
+
+---
+
+## 🙇‍♂ Author
+
+Aarya Chepuri(CS22B018)
+Kowshik reddy Challa(CS22B015)  
+AI Assignment 3: Game Playing  
+April 2025
